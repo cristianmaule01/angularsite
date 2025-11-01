@@ -1,0 +1,11 @@
+[variables]
+NODE_VERSION = "20.19.0"
+
+[phases.setup]
+nixPkgs = ["nodejs_20"]
+
+[phases.build]
+cmds = ["npm ci --legacy-peer-deps", "npm run build:prod"]
+
+[phases.start]
+cmd = "npm run start:prod"
